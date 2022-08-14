@@ -26,6 +26,7 @@ while game_status == True:
         drawer.playerMove(values)
         player_turn = "Bot"
         print("Meow")
+        print("hello is my name")
     
 
 
