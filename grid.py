@@ -35,8 +35,12 @@ def ticker():
     
 def botMove(values):
     print("I moved")
+    values["A1"] = "X"
+    return values
     
 def playerMove(values):
-    input("Enter move")
+    play = input("Enter move:\n")
+    values[play] = "O"
+    return values
         
     
