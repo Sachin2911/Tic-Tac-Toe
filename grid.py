@@ -3,6 +3,7 @@ import time
 import os
 import random
 
+
 #Creates game grid
 def grid_Drawer(input):
     
@@ -16,14 +17,15 @@ def grid_Drawer(input):
 def start_prompt():
     print("Hi there I a Tic-Tac-Toe bot!!")
     if input("Do you want to play Yes/No \n") == "Yes":
-        if random.randint(1,2) == 1:
+        first_player = random.randint(1,2)
+        if first_player == 1:
             print("I will play first")
             ticker()
-            return "Bot"
-        if random.randint(1,2) == 2:
+            return "Bot", True
+        if first_player == 2:
             print("You will play first")
             ticker()
-            return "Player"
+            return "Player", False
     else: exit()
 
 def ticker():
@@ -33,14 +35,16 @@ def ticker():
     time.sleep(1)
     print("Toe...")
     
-def botMove(values):
+def botMove(values, player_obj):
     print("I moved")
+    print()
     values["A1"] = "X"
     return values
     
 def playerMove(values):
     play = input("Enter move:\n")
     values[play] = "O"
+    time.sleep(1)
     return values
         
     
